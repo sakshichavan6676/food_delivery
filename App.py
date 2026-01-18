@@ -38,10 +38,6 @@ prep_time = st.number_input(
     "Preparation Time (minutes)", min_value=0, step=1
 )
 
-experience = st.number_input(
-    "Courier Experience (years)", min_value=0.0, step=0.5
-)
-
 # ---------- ENCODING ----------
 weather_map = {"Clear": 0, "Rainy": 1, "Foggy": 2, "Windy": 3}
 traffic_map = {"Low": 0, "Medium": 1, "High": 2}
@@ -54,8 +50,7 @@ input_data = pd.DataFrame([[
     traffic_map[traffic],
     time_map[time_of_day],
     vehicle_map[vehicle],
-    prep_time,
-    experience
+    prep_time
 ]], columns=[
     "Distance_km",
     "Weather",
@@ -63,7 +58,6 @@ input_data = pd.DataFrame([[
     "Time_of_Day",
     "Vehicle_Type",
     "Preparation_Time_min",
-    "Courier_Experience_yrs"
 ])
 
 # ---------- PREDICTION ----------
